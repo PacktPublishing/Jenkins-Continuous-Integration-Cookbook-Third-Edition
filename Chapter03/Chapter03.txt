@@ -1,0 +1,132 @@
+login as: mitesh51
+mitesh51@52.172.200.249's password:
+Welcome to Ubuntu 14.04.5 LTS (GNU/Linux 4.4.0-91-generic
+x86_64)
+* Documentation: https://help.ubuntu.com/
+System information as of Sat Aug 12 12:31:29 UTC 2017
+System load: 0.24 Memory usage: 2% Processes: 82
+Usage of /: 41.0% of 1.94GB Swap usage: 0% Users logged in: 0
+Graph this data and manage this system at:
+https://landscape.canonical.com/
+Get cloud support with Ubuntu Advantage Cloud Guest:
+http://www.ubuntu.com/business/services/cloud
+0 packages can be updated.
+0 updates are security updates.
+
+------------------------------------------------------------------------------------------------------
+
+Creating initial configuration... done.
+Creating LDAP directory... done.
+* Starting OpenLDAPslapd[ OK ]
+Setting up ldap-utils (2.4.31-1+nmu2ubuntu8.4) ...
+Processing triggers for libc-bin (2.19-0ubuntu6.13) ...
+Processing triggers for ufw (0.34~rc-0ubuntu2) ...
+Processing triggers for ureadahead (0.100.0-16) ...
+root@myopenladap:/home/mitesh51#
+root@myopenladap:/home/mitesh51# sudodpkg-reconfigure slapd
+* Stopping OpenLDAPslapd[ OK ]
+Moving old database directory to /var/backups:
+- directory unknown... done.
+Creating initial configuration... done.
+Creating LDAP directory... done.
+* Starting OpenLDAPslapd[ OK ]
+Processing triggers for libc-bin (2.19-0ubuntu6.13) ...
+root@myopenladap:/home/mitesh51#
+
+------------------------------------------------------------------------------------------------------
+
+root@myopenladap:/home/mitesh51# sudo apt-get install phpldapadmin
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+The following extra packages will be installed:
+apache2apache2-bin apache2-data libapache2-mod-php5libapr1libaprutil1
+libaprutil1-dbd-sqlite3libaprutil1-ldapphp5-cli php5-common php5-json
+php5-ldapphp5-readlinessl-cert
+Suggested packages:
+apache2-doc apache2-suexec-pristine apache2-suexec-custom apache2-utils
+php-pear php5-user-cache openssl-blacklist
+The following new packages will be installed:
+apache2apache2-bin apache2-data libapache2-mod-php5libapr1libaprutil1
+libaprutil1-dbd-sqlite3libaprutil1-ldapphp5-cli php5-common php5-json
+php5-ldapphp5-readlinephpldapadminssl-cert
+0 upgraded, 15 newly installed, 0 to remove and 0 not upgraded.
+Need to get 6,881 kB of archives.
+After this operation, 30.9 MB of additional disk space will be used.
+Do you want to continue? [Y/n] Y
+Get:1 http://azure.archive.ubuntu.com/ubuntu/ trusty/main libapr1amd64
+1.5.0-1 [85.1 kB]
+Get:2 http://azure.archive.ubuntu.com/ubuntu/ trusty/main libaprutil1amd64
+1.5.3-1 [76.4 kB]
+Get:3 http://azure.archive.ubuntu.com/ubuntu/ trusty/main php5-jsonamd64
+1.3.2-2build1 [34.4 kB]
+Get:4 http://azure.archive.ubuntu.com/ubuntu/ trusty-updates/main php5-
+common amd645.5.9+dfsg-1ubuntu4.22 [449 kB]
+Get:5 http://azure.archive.ubuntu.com/ubuntu/ trusty-updates/main php5-
+ldapamd645.5.9+dfsg-1ubuntu4.22 [19.1 kB]
+Get:6 http://azure.archive.ubuntu.com/ubuntu/ trusty-updates/main php5-cli
+amd645.5.9+dfsg-1ubuntu4.22 [2,154 kB]
+Get:7 http://azure.archive.ubuntu.com/ubuntu/ trusty-updates/main php5-
+readlineamd645.5.9+dfsg-1ubuntu4.22 [12.1 kB]
+Get:8 http://azure.archive.ubuntu.com/ubuntu/ trusty/main libaprutil1-dbdsqlite3amd64 1.5.3-1 [10.5 kB]
+Get:9 http://azure.archive.ubuntu.com/ubuntu/ trusty/main libaprutil1-
+ldapamd64 1.5.3-1 [8,634 B]
+Get:10 http://azure.archive.ubuntu.com/ubuntu/ trusty-updates/main apache2-
+bin amd64 2.4.7-1ubuntu4.17 [845 kB]
+Get:11 http://azure.archive.ubuntu.com/ubuntu/ trusty-updates/main apache2-
+data all 2.4.7-1ubuntu4.17 [160 kB]
+Get:12 http://azure.archive.ubuntu.com/ubuntu/ trusty-updates/main
+apache2amd64 2.4.7-1ubuntu4.17 [87.4 kB]
+Get:13 http://azure.archive.ubuntu.com/ubuntu/ trusty-updates/main
+libapache2-mod-php5amd645.5.9+dfsg-1ubuntu4.22 [2,194 kB]
+Get:14 http://azure.archive.ubuntu.com/ubuntu/ trusty/main ssl-cert all
+1.0.33 [16.6 kB]
+Get:15 http://azure.archive.ubuntu.com/ubuntu/ trusty-updates/universe
+phpldapadmin all 1.2.2-5ubuntu1.1 [730 kB]
+Fetched 6,881 kB in 5s (1,305 kB/s)
+Preconfiguring packages ...
+Selecting previously unselected package libapr1:amd64.
+(Reading database ... 29206 files and directories currently installed.)
+Preparing to unpack .../libapr1_1.5.0-1_amd64.deb ...
+Unpacking libapr1:amd64 (1.5.0-1) ...
+...
+Processing triggers for man-db (2.6.7.1-1ubuntu1) ...
+Processing triggers for ureadahead (0.100.0-16) ...
+Processing triggers for ufw (0.34~rc-0ubuntu2) ...
+Setting up libapr1:amd64 (1.5.0-1) ...
+Setting up libaprutil1:amd64 (1.5.3-1) ...
+...
+Setting up apache2 (2.4.7-1ubuntu4.17) ...
+Enabling module mpm_event.
+.
+Enabling site 000-default.
+* Starting web server apache2AH00558: apache2: Could not reliably determine
+the server's fully qualified domain name, using 10.0.0.4. Set the
+'ServerName' directive globally to suppress this message
+*
+Setting up ssl-cert (1.0.33) ...
+sent invalidate(group) request, exiting
+.
+Setting up php5-common (5.5.9+dfsg-1ubuntu4.22) ...
+Creating config file /etc/php5/mods-available/pdo.ini with new version
+php5_invoke: Enable module pdo for apache2 SAPI
+php5_invoke: Enable module pdo for cli SAPI
+.
+Enabling module mpm_prefork.
+apache2_switch_mpm Switch to prefork
+* Restarting web server apache2AH00558: apache2: Could not reliably
+determine the server's fully qualified domain name, using 10.0.0.4. Set the
+'ServerName' directive globally to suppress this message
+[ OK ]
+apache2_invoke: Enable module php5
+* Restarting web server apache2AH00558: apache2: Could not reliably
+determine the server's fully qualified domain name, using 10.0.0.4. Set the
+'ServerName' directive globally to suppress this message
+[ OK ]
+Processing triggers for libc-bin (2.19-0ubuntu6.13) ...
+root@myopenladap:/home/mitesh51#
+
+------------------------------------------------------------------------------------------------------------------
+
+
+

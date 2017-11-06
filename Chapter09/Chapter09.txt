@@ -1,0 +1,158 @@
+document.write("<h1 id='test'>Example Location</h1>")
+
+----------------------------------------------------------------------------------------------------------------
+
+@charset "utf-8";
+#test {
+background-image: url(/userContent/camera.png);
+}
+#main-table{
+background-image: url(/userContent/camera.png)
+ !important;
+
+-----------------------------------------------------------------------------------------------------------------
+
+<script>
+<link rel="stylesheet" type="text/css"
+ href="/userContent/mycss.css" /><script
+ src="/userContent/myjavascript.js" type="text/javascript">
+</script>
+
+-----------------------------------------------------------------------------------------------------------------
+
+#test {
+width: 180px; height: 60px;
+background: red; color: yellow;
+text-align: center;
+ -moz-border-radius: 40px; -webkit-border-radius: 40px;
+}
+
+-----------------------------------------------------------------------------------------------------------------
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+ http://maven.apache.org/maven-v4_0_0.xsd">
+<modelVersion>4.0.0</modelVersion>
+<groupId>nl.uva.berg</groupId>
+<artifactId>overlay</artifactId>
+<packaging>war</packaging>
+<!-- Keep version the same as Jenkins as a hint -->
+<version>1.437</version>
+<name>overlay Maven Webapp</name>
+<url>http://maven.apache.org</url>
+<dependencies>
+<dependency>
+<groupId>org.jenkins-ci.main</groupId>
+<artifactId>jenkins-war</artifactId>
+<version>1.437</version>
+<type>war</type>
+<scope>runtime</scope>
+</dependency>
+</dependencies>
+<repositories>
+<repository>
+ <id>Jenkins</id>
+ <url>http://repo.jenkins-ci.org/releases</url>
+ </repository>
+</repositories>
+</project>
+
+-------------------------------------------------------------------------------------------------------------
+
+<Context logEffectiveWebXml="true" path="/"></Context>
+
+-------------------------------------------------------------------------------------------------------------
+
+# we don't want robots to click "build" links
+User-agent: *
+Disallow: /
+
+------------------------------------------------------------------------------------------------------------
+
+User-agent: *
+Disallow: /
+User-agent: Googlebot
+Allow: /userContent/corporate/
+
+-------------------------------------------------------------------------------------------------------------
+
+<html><head><title>Example Report</title>
+<link rel="stylesheet" type="text/css" href="/css/style.css" /></head>
+<body>
+<h2>Generated Report</h2>
+Example icon: <img title="A Jenkins Icon" alt="Schedule a build"
+src="/images/24x24/clock.png" />
+</body></html>
+
+--------------------------------------------------------------------------------------------------------------
+
+#!/usr/bin/perl
+$counter=0;
+$end=20;
+$host='http://localhost:8080';
+while($end > $counter){
+$counter++;
+print "<form action=$host/createItem?mode=copy
+method=POST>\n";print "<input type=text name=name
+value=CH9.fake.$counter>\n";
+print "<input type=text name=from value=Template1 >\n";
+print "<input type=submit value='Create
+ CH9.fake.$counter'>\n";
+print "</form><br>\n";
+print "<form action=$host/job/CH9.fake.$counter/doDelete
+ method=POST>\n";print "<input type=submit value='Delete
+ CH9.fake.$counter'>\n";
+print "</form><br>\n";
+}
+
+-----------------------------------------------------------------------------------------------------------------
+
+perl create.pl > form.html
+
+-----------------------------------------------------------------------------------------------------------------
+
+HTTP ERROR 403
+ Problem accessing /createItem. Reason:
+No valid crumb was included in the request
+
+------------------------------------------------------------------------------------------------------------------
+
+<form action=http://localhost:8080/createItem?mode=copy
+ method=POST>
+<input type=text name=name value=CH9.fake.1>
+<input type=text name=from value=Template1 >
+<input type=submit value='Create CH9.fake.1'>
+</form>
+
+------------------------------------------------------------------------------------------------------------------
+
+<script src="/sounds/script"
+ type="text/javascript"></script><script type="text/javascript"
+ defer="defer">function _sounds_ajaxJsonFetcherFactory(onSuccess,
+ onFailure) {
+return function() {
+newAjax.Request("/sounds/getSounds", {
+parameters: { version: VERSION },
+onSuccess: function(rsp) {
+onSuccess(eval('x='+rsp.responseText))
+ },
+onFailure: onFailure
+ });
+ }
+}
+if (AUDIO_CAPABLE) {
+ _sounds_pollForSounds(_sounds_ajaxJsonFetcherFactory);
+}</script>
+
+--------------------------------------------------------------------------------------------------------------------
+
+<center>
+<p>Writes Blackboard sanity reports<br>
+and sends them to a list.
+<table border="1" class="myclass"><tr><td>More
+Details</td></tr></table>
+</center>
+
+--------------------------------------------------------------------------------------------------------------------
+

@@ -1,0 +1,182 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+http://maven.apache.org/xsd/maven-4.0.0.xsd">
+ <modelVersion>4.0.0</modelVersion>
+ <groupId>com.tiny</groupId>
+ <artifactId>test</artifactId>
+ <version>0.0.1-SNAPSHOT</version>
+ <name>test</name>
+ <build>
+ <plugins>
+ <plugin>
+ <groupId>org.apache.maven.plugins</groupId>
+ <artifactId>maven-compiler-plugin</artifactId>
+ <version>3.6.1</version>
+ <configuration>
+ <source>1.8</source>
+ <target>1.8</target>
+ </configuration>
+ </plugin>
+ <plugin>
+ <groupId>org.apache.maven.plugins</groupId>
+ <artifactId>maven-surefire-plugin</artifactId>
+ <version>2.19.1</version>
+ <configuration>
+ <suiteXmlFiles>
+ <suiteXmlFile>testng.xml</suiteXmlFile>
+ </suiteXmlFiles>
+ </configuration>
+ </plugin>
+ </plugins>
+ </build>
+ <dependencies>
+ <dependency>
+ <groupId>org.seleniumhq.selenium</groupId>
+ <artifactId>selenium-java</artifactId>
+ <version>3.6.0</version>
+</dependency>
+ <dependency>
+ <groupId>org.testng</groupId>
+ <artifactId>testng</artifactId>
+ <version>6.10</version>
+ <scope>test</scope>
+ </dependency>
+ </dependencies>
+</project>
+
+------------------------------------------------------------------------------
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+<test name="Test">
+<classes>
+<class name="example.PetClinicTest"/>
+</classes>
+</test><!-- Test -->
+</suite><!-- Suite -->
+
+--------------------------------------------------------------------------------
+
+importjava.io.File;
+importorg.openqa.selenium.WebDriver;
+importorg.openqa.selenium.firefox.FirefoxDriver;
+importorg.testng.Assert;
+importorg.testng.annotations.Test;
+importorg.testng.annotations.BeforeTest;
+importorg.testng.annotations.AfterTest;
+public class PetClinicTest {
+ private WebDriver driver;
+ @Test
+ public void testPetClinic() {
+ driver.get("http://localhost:8090/petclinic/");
+ String title = driver.getTitle();
+ Assert.assertTrue(title.contains("a Spring Frameworkk"));
+ }
+ @BeforeTest
+ public void beforeTest() {
+ File file = new
+File("F:\\##JenkinsEssentials\\geckodriver-v0.13.0-
+win64\\geckodriver.exe");
+ System.setProperty("webdriver.gecko.driver",
+file.getAbsolutePath());
+ driver = new FirefoxDriver();
+ }
+ @AfterTest
+ public void afterTest() {
+ driver.quit();
+ }
+}
+
+-----------------------------------------------------------------------------
+
+<project default="jmeter.tests">
+<property name="jmeter" location="/var/lib/jenkins/jmeter"
+ />
+<property name="target" location="${basedir}/target" />
+<echo message="Running... Expecting variables [jvarg,desc]"
+ />
+<echo message="For help please read ${basedir}/README"/>
+<echo message="[DESCRIPTION] ${desc}" />
+<taskdef name="jmeter"
+ classname="org.programmerplanet.ant.taskdefs.jmeter.JMeterT
+ ask" classpath="${jmeter}/extras/ant-jmeter-1.0.9.jar" />
+ <target name="jmeter.init">
+ <mkdir dir="${basedir}/jmeter_results"/>
+ <delete includeemptydirs="true">
+ <fileset dir="${basedir}/jmeter_results"
+ includes="**/*" />
+ </delete>
+ </target>
+ <target name="jmeter.tests" depends="jmeter.init"
+ description="launch jmeter load tests">
+ <echo message="[Running] jmeter tests..." />
+<jmeter jmeterhome="${jmeter}"
+ resultlog="${basedir}/jmeter_results/LoadTestResults.jtl">
+ <testplans dir="${basedir}/plans" includes="*.jmx"/>
+ <jvmarg value="${jvarg}" />
+ <property name="csv" value="${basedir}/data/URLS.csv"
+ />
+ </jmeter>
+ </target>
+</project>
+
+---------------------------------------------------------------------------
+
+jvarg=-Xmx512m
+desc= This is the first iteration in a performance test
+ environment - Driven by Jenkins
+
+---------------------------------------------------------------------------
+
+java -jar fitnesse-standalone.jar -help
+Usage: java -jar fitnesse.jar [-vpdrleoab]
+-p <port number> {80}
+-d <working directory> {.}
+-r <page root directory> {FitNesseRoot}
+-l <log directory> {no logging}
+-f <config properties file> {plugins.properties}
+-e <days> {14} Number of days before page versions expire
+-o omit updates
+-a {user:pwd | user-file-name} enable authentication.
+-i Install only, then quit.
+-c <command> execute single command.
+-b <filename> redirect command output.
+-v {off} Verbose logging
+
+--------------------------------------------------------------------------
+
+java -jar fitnesse-standalone.jar -p 39996 -l logs -a
+tester:test
+Bootstrapping FitNesse, the fully integrated standalone wiki
+and acceptance testing framework.
+root page: fitnesse.wiki.fs.FileSystemPage at
+./FitNesseRoot#latest
+logger: /home/alan/Desktop/X/fitness/logs
+authenticator: fitnesse.authentication.OneUserAuthenticator
+page factory: fitnesse.html.template.PageFactory
+page theme: fitnesse_straight
+Starting FitNesse on port: 39996
+
+-------------------------------------------------------------------------
+
+<testResults>
+<FitNesseVersion>v20140901</FitNesseVersion>
+<rootPath>FitNesse.SuiteAcceptanceTests</rootPath>
+<result>
+<counts><right>103</right>
+<wrong>0</wrong>
+<ignores>0</ignores>
+<exceptions>0</exceptions>
+</counts>
+<runTimeInMillis>27</runTimeInMillis>
+<relativePageName>CopyAndAppendLastRow</relativePageName>
+<pageHistoryLink>
+FitNesse.SuiteAcceptanceTests.SuiteFitDecoratorTests.CopyAndAppend
+ LastRow?pageHistory&resultDate=20141101164526
+</pageHistoryLink>
+</result>
+
+-------------------------------------------------------------------------
+

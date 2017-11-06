@@ -1,0 +1,196 @@
+# Required metadata
+sonar.projectKey=SonarHTMLCSSJS
+sonar.projectName=Simple HTML CSS JS project analyzed with the
+SonarQube
+sonar.projectVersion=1.0
+# Comma-separated paths to directories with sources (required)
+sonar.sources=.
+# Encoding of the source files
+sonar.sourceEncoding=UTF-8
+
+-----------------------------------------------------------------------------------------------------------
+
+Cloning repository https://github.com/claviska/shoelace-css.git
+>git.exe init
+F:\1.DevOps2016\#JenkinsEssentials\FirstDraft\jenkinsHome\works
+pace\SonarHTMLCSSJS # timeout=10
+
+-----------------------------------------------------------------------------------------------------------
+
+> git.exe --version # timeout=10
+>git.exe fetch --tags --progress
+https://github.com/claviska/shoelace-css.git
++refs/heads/*:refs/remotes/origin/*
+>git.exe config remote.origin.url
+https://github.com/claviska/shoelace-css.git # timeout=10
+>git.exe config --add remote.origin.fetch
++refs/heads/*:refs/remotes/origin/* # timeout=10
+>git.exe config remote.origin.url
+https://github.com/claviska/shoelace-css.git # timeout=10
+
+------------------------------------------------------------------------------------------------------------
+
+>git.exe fetch --tags --progress
+https://github.com/claviska/shoelace-css.git
++refs/heads/*:refs/remotes/origin/*
+>git.exe rev-parse "refs/remotes/origin/master{commit}" #
+timeout=10
+>git.exe rev-parse "refs/remotes/origin/origin/master{commit}"
+# timeout=10
+
+-----------------------------------------------------------------------------------------------------------
+
+[SonarHTMLCSSJS] $
+F:\1.DevOps2016\#JenkinsEssentials\FirstDraft\jenkinsHome\tools
+\hudson.plugins.sonar.SonarRunnerInstallation\SonarQube_Scanner
+_3.0.3\bin\sonar-scanner.bat -e Dsonar.host.url=http://localhost:9000/ ******** "-
+Dsonar.projectName=Simple HTML CSS JS project analyzed with the
+SonarQube" -Dsonar.projectVersion=1.0 -
+Dsonar.sourceEncoding=UTF-8 -Dsonar.projectKey=SonarHTMLCSSJS Dsonar.sources=. -
+Dsonar.projectBaseDir=F:\1.DevOps2016\#JenkinsEssentials\FirstD
+raft\jenkinsHome\workspace\SonarHTMLCSSJS
+INFO: Option -e/--errors is no longer supported and will be
+ignored
+INFO: Scanner configuration file:
+F:\1.DevOps2016\#JenkinsEssentials\FirstDraft\jenkinsHome\tools
+\hudson.plugins.sonar.SonarRunnerInstallation\SonarQube_Scanner
+_3.0.3\bin\..\conf\sonar-scanner.properties
+INFO: Project root configuration file: NONE
+INFO: SonarQube Scanner 3.0.3.778
+INFO: Java 1.8.0_111 Oracle Corporation (64-bit)
+INFO: Windows 10 10.0 amd64
+INFO: User cache:
+C:\WINDOWS\system32\config\systemprofile\.sonar\cache
+INFO: Load global settings
+INFO: Load global settings (done) | time=557ms
+INFO: User cache:
+C:\WINDOWS\system32\config\systemprofile\.sonar\cache
+INFO: Load plugins index
+INFO: Load plugins index (done) | time=113ms
+INFO: Download sonar-csharp-plugin-5.7.0.612.jar
+INFO: Download sonar-python-plugin-1.7.0.1195.jar
+INFO: Download sonar-css-plugin-3.1.jar
+INFO: Download sonar-java-plugin-4.12.0.11033.jar
+INFO: Download sonar-scm-git-plugin-1.2.jar
+INFO: Download sonar-android-plugin-1.1.jar
+INFO: Download sonar-php-plugin-2.9.2.1744.jar
+INFO: Download sonar-scm-svn-plugin-1.4.0.522.jar
+INFO: SonarQube server 6.3.1
+INFO: Default locale: "en_IN", source code encoding: "UTF-8"
+INFO: Process project properties
+INFO: Load project repositories
+INFO: Load project repositories (done) | time=140ms
+INFO: Load quality profiles
+INFO: Load quality profiles (done) | time=437ms
+INFO: Load active rules
+INFO: Load active rules (done) | time=6984ms
+INFO: Load metrics repository
+INFO: Load metrics repository (done) | time=752ms
+INFO: Publish mode
+INFO: Project key: SonarHTMLCSSJS
+INFO: ------------- Scan Simple HTML CSS JS project analyzed
+with the SonarQube
+INFO: Load server rules
+INFO: Load server rules (done) | time=1241ms
+INFO: Initializer GenericCoverageSensor
+INFO: Initializer GenericCoverageSensor (done) | time=0ms
+INFO: Base dir:
+F:\1.DevOps2016\#JenkinsEssentials\FirstDraft\jenkinsHome\works
+pace\SonarHTMLCSSJS
+INFO: Working dir:
+F:\1.DevOps2016\#JenkinsEssentials\FirstDraft\jenkinsHome\works
+pace\SonarHTMLCSSJS\.scannerwork
+INFO: Source paths: .
+INFO: Source encoding: UTF-8, default locale: en_IN
+INFO: Index files
+INFO: 30 files indexed
+INFO: Quality profile for css: SonarQube Way
+INFO: Quality profile for js: Sonar way
+INFO: Quality profile for web: Sonar way
+INFO: Sensor NoSonar Sensor [php]
+INFO: Sensor NoSonar Sensor [php] (done) | time=0ms
+INFO: Sensor Coverage Report Import [csharp]
+INFO: Sensor Coverage Report Import [csharp] (done) | time=0ms
+INFO: Sensor Coverage Report Import [csharp]
+INFO: Sensor Coverage Report Import [csharp] (done) | time=0ms
+INFO: Sensor Unit Test Results Import [csharp]
+INFO: Sensor Unit Test Results Import [csharp] (done) |
+time=1ms
+INFO: Sensor CSS Analyzer Sensor [css]
+INFO: 15 source files to be analyzed
+INFO: Sensor CSS Analyzer Sensor [css] (done) | time=8774ms
+INFO: 15/15 source files have been analyzed
+INFO: Sensor Embedded CSS Analyzer Sensor [css]
+INFO: 1 source files to be analyzed
+INFO: Sensor Embedded CSS Analyzer Sensor [css] (done) |
+time=631ms
+INFO: Sensor SonarJavaXmlFileSensor [java]
+INFO: Sensor SonarJavaXmlFileSensor [java] (done) | time=0ms
+INFO: Sensor Web [web]
+INFO: 1/1 source files have been analyzed
+INFO: Sensor Web [web] (done) | time=3667ms
+INFO: Sensor Analyzer for "php.ini" files [php]
+INFO: Sensor Analyzer for "php.ini" files [php] (done) |
+time=0ms
+INFO: Sensor JavaScript Squid Sensor [javascript]
+INFO: 2 source files to be analyzed
+INFO: Unit Test Coverage Sensor is started
+INFO: 2/2 source files have been analyzed
+INFO: Integration Test Coverage Sensor is started
+INFO: Overall Coverage Sensor is started
+INFO: Sensor JavaScript Squid Sensor [javascript] (done) |
+time=1949ms
+INFO: Sensor Zero Coverage Sensor
+INFO: Sensor Zero Coverage Sensor (done) | time=334ms
+INFO: Sensor Code Colorizer Sensor
+INFO: Sensor Code Colorizer Sensor (done) | time=4ms
+INFO: Sensor CPD Block Indexer
+INFO:
+org.sonar.scanner.cpd.deprecated.DefaultCpdBlockIndexer@511a307
+e is used for css
+INFO:
+org.sonar.scanner.cpd.deprecated.DefaultCpdBlockIndexer@511a307
+e is used for js
+INFO:
+org.sonar.scanner.cpd.deprecated.DefaultCpdBlockIndexer@511a307
+e is used for web
+INFO: Sensor CPD Block Indexer (done) | time=3ms
+INFO: SCM Publisher is disabled
+INFO: Calculating CPD for 18 files
+INFO: CPD calculation finished
+INFO: Analysis report generated in 1401ms, dir size=475 KB
+INFO: Analysis reports compressed in 244ms, zip size=111 KB
+INFO: Analysis report uploaded in 13680ms
+INFO: ANALYSIS SUCCESSFUL, you can browse
+http://localhost:9000/dashboard/index/SonarHTMLCSSJS
+INFO: Note that you will be able to access the updated
+dashboard once the server has processed the submitted analysis
+report
+INFO: More about the report processing at
+http://localhost:9000/api/ce/task?id=AV2b4vtMnc_wgjAawYBq
+INFO: Task total time: 56.134 s
+INFO: ---------------------------------------------------------
+---------------
+INFO: EXECUTION SUCCESS
+INFO: ---------------------------------------------------------
+---------------
+INFO: Total time: 1:09.022s
+INFO: Final Memory: 50M/219M
+INFO: ---------------------------------------------------------
+---------------
+Started calculate disk usage of build
+Finished Calculation of disk usage of build in 0 seconds
+Started calculate disk usage of workspace
+Finished Calculation of disk usage of workspace in 0 seconds
+Finished: SUCCESS
+
+------------------------------------------------------------------------------------------------------------------
+
+# Required metadata sonar.projectKey=java-sonar-runner-simple
+sonar.projectName=Java project analyzed with the SonarQube
+Runner sonar.projectVersion=1.0 # Comma-separated paths to
+directories with sources (required) sonar.sources=src #
+Encoding of the source files sonar.sourceEncoding=UTF-8
+
+------------------------------------------------------------------------------------------------------------------
+

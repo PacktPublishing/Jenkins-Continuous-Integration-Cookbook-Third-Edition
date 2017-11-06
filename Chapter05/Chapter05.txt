@@ -1,0 +1,329 @@
+buildfile:
+F:\1.DevOps2016\#JenkinsEssentials\FirstDraft\jenkinsHome\works
+pace\FirstAntExample\build.xml
+init:
+compile:
+ [javac]
+F:\1.DevOps2016\#JenkinsEssentials\FirstDraft\jenkinsHome\works
+pace\FirstAntExample\build.xml:17: warning: 'includeantruntime'
+was not set, defaulting to build.sysclasspath=last; set to
+false for repeatable builds war:
+BUILD SUCCESSFUL
+Total time: 1 second
+Archiving artifacts
+Started calculation of disk usage of build
+Finished calculation of disk usage of build in 0 seconds
+Started calculation of disk usage of workspace
+Finished calculation of disk usage of workspace in 0 seconds
+Finished: SUCCESS
+
+--------------------------------------------------------------------------------
+
+INFO: Task total time: 1:02.260 s
+INFO: ---------------------------------------------------------
+---------------
+INFO: EXECUTION SUCCESS
+INFO: ---------------------------------------------------------
+---------------
+INFO: Total time: 1:37.380s
+INFO: Final Memory: 51M/223M
+INFO: ---------------------------------------------------------
+---------------
+Archiving artifacts
+Started calculation of disk usage of build
+Finished calculation of disk usage of build in 0 seconds
+Started calculation of disk usage of workspace
+Finished calculation of disk usage of workspace in 0 seconds
+Finished: SUCCESS
+
+---------------------------------------------------------------------------------------
+
+
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+http://maven.apache.org/maven-v4_0_0.xsd">
+<modelVersion>4.0.0</modelVersion>
+<groupId>org.berg</groupId>
+<artifactId>ch3.jenkins.builds.properties</artifactId>
+<version>1.0-SNAPSHOT</version>
+<name>${name.from.jenkins}</name>
+<properties><project.build.sourceEncoding>UTF8</project.build.s
+ourceEncoding>
+</properties>
+<build>
+<plugins><plugin>
+<groupId>org.codehaus.gmaven</groupId>
+<artifactId>gmaven-plugin</artifactId>
+<version>1.3</version>
+<executions><execution>
+<id>run-myGroovy</id>
+<goals><goal>execute</goal></goals>
+<phase>verify</phase>
+<configuration>
+<source>
+def environment = System.getenv()
+println "----Environment"
+environment.each{println it }
+println "----Property"
+println(System.getProperty("longname"))
+println "----Project and session"
+println "Project: ${project.class}"
+println "Session: ${session.class}"
+println "longname: ${project.properties.longname}"
+println "Project name: ${project.name}"
+println "JENKINS_HOME: ${project.properties.JENKINS_HOME}"
+</source>
+</configuration>
+</execution></executions>
+</plugin></plugins>
+</build>
+</project>
+
+--------------------------------------------------------------------------------------------
+
+project.type=prod
+secrets.file=/etc/secrets
+enable.email=true
+JOB_URL=I AM REALLY NOT WHAT I SEEM
+
+-----------------------------------------------------------------------------------------------
+
+Maven Version: 3.2.1
+Goals: verify
+
+----------------------------------------------------------------------------------------------
+
+----Project and session
+Project: class org.apache.Maven.model.Model
+Session: class org.apache.Maven.execution.MavenSession
+longname: SuperGood
+[INFO] -------------------------------------------------------
+[ERROR] BUILD ERROR[INFO] -------------------------------------
+------------------
+[INFO] Groovy.lang.MissingPropertyException: No such property:
+namefor class: script1315151939046
+
+------------------------------------------------------------------------------------------------
+
+<build>
+<plugins>
+<plugin>
+<groupId>org.codehaus.mojo</groupId>
+<artifactId>properties-maven-plugin</artifactId>
+<version>1.0-alpha-2</version>
+<executions>
+<execution>
+<phase>initialize</phase>
+<goals>
+<goal>read-project-properties</goal>
+</goals>
+<configuration>
+<files>
+<file>${fullpath.to.properties}</file>
+</files>
+</configuration>
+</execution>
+</executions>
+</plugin>
+</plugins>
+</build>
+
+-----------------------------------------------------------------------------------------------
+
+<build>
+<plugins><plugin>
+<groupId>org.codehaus.gmaven</groupId>
+<artifactId>gmaven-plugin</artifactId>
+<version>1.3</version>
+<executions>
+<execution>
+<id>run-myGroovy-test</id>
+<goals><goal>execute</goal></goals>
+<phase>test</phase>
+<configuration>
+<source>
+def ant = new AntBuilder()
+ant.echo("\n\nTested ----> With Groovy")
+</source>
+</configuration>
+</execution>
+<execution>
+<id>run-myGroovy-verify</id>
+<goals><goal>execute</goal></goals>
+<phase>verify</phase>
+<configuration>
+<source>
+def ant = new AntBuilder()
+ant.echo("\n\nVerified at ${new Date()}")
+</source>
+</configuration>
+</execution>
+</executions>
+</plugin></plugins>
+</build>
+
+----------------------------------------------------------------------------------------------
+
+<build>
+<plugins><plugin>
+<groupId>org.codehaus.gmaven</groupId>
+<artifactId>gmaven-plugin</artifactId>
+<version>1.3</version>
+<executions><execution>
+<id>run-myGroovy</id>
+<goals><goal>execute</goal></goals>
+<phase>verify</phase>
+<configuration>
+<source>
+def ant = new AntBuilder()
+host="Myhost_series"
+print "user: "
+user = new String(System.console().readPassword())
+print "password: "
+pw = new String(System.console().readPassword())
+for ( i in 1..920) {
+counterStr=String.format('%02d',i)
+ant.scp(trust:'true',file:"${user}:${pw}${host}${counterStr}:/$
+{full_path_to_location}",
+localTofile:"${myfile}-${counterStr}", verbose:"true")
+}
+</source>
+</configuration>
+</execution></executions>
+<dependencies>
+<dependency>
+<groupId>ant</groupId>
+<artifactId>ant</artifactId>
+<version>1.6.5</version>
+</dependency>
+<dependency>
+<groupId>ant</groupId>
+<artifactId>ant-launcher</artifactId>
+<version>1.6.5</version>
+</dependency>
+<dependency>
+<groupId>ant</groupId>
+<artifactId>ant-jsch</artifactId>
+<version>1.6.5</version>
+</dependency>
+<dependency>
+<groupId>com.jcraft</groupId>
+<artifactId>jsch</artifactId>
+<version>0.1.42</version>
+</dependency>
+</dependencies>
+</plugin></plugins>
+</build>
+
+------------------------------------------------------------------------------------------------
+
+<build>
+<finalName>jsp_example</finalName>
+<plugins>
+<plugin>
+<groupId>org.mortbay.jetty</groupId>
+<artifactId>maven-jetty-jspc-plugin</artifactId>
+<version>6.1.14</version>
+<executions>
+<execution>
+<id>jspc</id>
+<goals>
+<goal>jspc</goal>
+</goals>
+<configuration>
+</configuration>
+</execution>
+</executions>
+</plugin>
+<plugin>
+<groupId>org.apache.maven.plugins</groupId>
+<artifactId>maven-war-plugin</artifactId>
+<version>2.4</version>
+<configuration>
+<webXml>${basedir}/target/web.xml</webXml>
+</configuration>
+</plugin>
+</plugins>
+</build>
+
+-------------------------------------------------------------------------------------------------
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;
+charset=UTF-8">
+<title>Hello World Example</title>
+</head>
+<body>
+<%
+ String evilInput= null;
+evilInput =
+ request.getParameter("someUnfilteredInput");
+if (evilInput==null){evilInput="Hello Kind Person";}
+ %>
+<form action="index.jsp">
+ The big head says: <%=evilInput%><p>
+ Please add input:<input type='text'
+ name='someUnfilteredInput'>
+<input type="submit">
+</form>
+</body>
+</html>
+
+----------------------------------------------------------------------------------------------------
+
+[ERROR] Failed to execute goal org.mortbay.jetty:maven-jettyjspc-plugin:6.1.14:jspc (jspc) on project jsp_example: Failure
+processing jsps -> [Help 1]
+
+----------------------------------------------------------------------------------------------------
+
+<servlet>
+<servlet-name>jsp.index_jsp</servlet-name>
+<servlet-class>jsp.index_jsp</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>jsp.index_jsp</servlet-name>
+<url-pattern>/index.jsp</url-pattern>
+</servlet-mapping>
+
+-----------------------------------------------------------------------------------------------------
+
+javax.servlet.ServletException: Error instantiating servlet class
+jsp.index_jsp
+Root Cause
+java.lang.NoClassDefFoundError:
+Lorg/apache/jasper/runtime/ResourceInjector;
+
+------------------------------------------------------------------------------------------------------
+
+<%@ page language="java" contentType="text/html;charset=UTF-8"
+pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+
+------------------------------------------------------------------------------------------------------
+
+<build>
+<plugin>
+<groupId>org.apache.maven.plugins</groupId>
+<artifactId>maven-antrun-plugin</artifactId>
+<version>1.7</version>
+<executions><execution>
+<phase>compile</phase>
+<configuration>
+<tasks>
+<exec executable="wget">
+<arg line="--auth-no-challenge --http-user=username --httppassword=apiToken http://localhost:8080/job/ch3.RunMe/build?token=changeme"
+/>
+</exec>
+</tasks>
+</configuration>
+<goals><goal>run</goal></goals>
+</execution></executions>
+</plugin>
+</build>
+
+--------------------------------------------------------------------------------------------------------
+
