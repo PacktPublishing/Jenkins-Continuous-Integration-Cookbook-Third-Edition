@@ -51,7 +51,3 @@ good enough, such as 4 GB RAM and 500 GB hard disk.
 
 * [Effective Jenkins: Getting Started with Continuous Integration [Video]](https://www.packtpub.com/networking-and-servers/effective-jenkins-getting-started-continuous-integration-video?utm_source=github&utm_medium=repository&utm_campaign=9781788476294)
 
-### Download a free PDF
-
- <i>If you have already purchased a print or Kindle version of this book, you can get a DRM-free PDF version at no cost.<br>Simply click on the link to claim your free PDF.</i>
-<p align="center"> <a href="https://packt.link/free-ebook/9781784390082">https://packt.link/free-ebook/9781784390082 </a> </p>
